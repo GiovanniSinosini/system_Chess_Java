@@ -42,9 +42,14 @@ public class Program {
 				}
 				
 				if (chessMatch.getPromoted() != null) {
-					System.out.println("Enter piece for promotion (B/N/R/Q): ");
-					String type = sc.nextLine();
-					chessMatch.replacePromotedPiece(type);
+					while (true) { 
+						System.out.println("Enter piece for promotion (B/N/R/Q): ");
+						String type = sc.nextLine();
+						if (type.equals("B") || type.equals("N") || type.equals("R") || type.equals("Q")) {
+							chessMatch.replacePromotedPiece(type);
+							break;
+						}
+					}
 				}
 				
 			}
